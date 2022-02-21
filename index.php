@@ -94,7 +94,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST')
   </div>
 </nav>
 <div class="container mt-3">
-<form action="/phpbeg/submit.php" method="post">
+<form action="/phpbeg/index.php" method="post">
     <h1>Please Contact Us For Your Concern</h1>
   <div class="mb-3">
     <label for="name" class="form-label">Name</label>
