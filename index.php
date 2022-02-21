@@ -1,3 +1,40 @@
+
+<?php
+if($_SERVER['REQUEST_METHOD']== 'POST')
+{
+    $name=$_POST['name'];
+    $email=$_POST['email'];
+    $disc=$_POST['disc'];
+    
+    //CONNECTING TO A DATABASE
+    $servername="localhost";
+    $username="root";
+    $passward="";
+    $database="Contact";
+    $con=mysqli_connect($servername,$username,$passward,$database);
+    if(!$con){
+      die("Error! ".mysqli_connect());
+
+  }
+  else{
+      $sql="INSERT INTO `contactus` (`Name`, `Email`, `Concern`, `dt`) VALUES ('$name', '$email','$disc', current_timestamp())";
+      $result=mysqli_query($con,$sql);
+          if($result){
+          
+            echo'<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>SUCCESS!</strong> You have been submited sucessfully..
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+          </div>';
+          }
+          else {
+            echo"This record was not inserted because of this error--->>".mysqli_error($con);
+
+            }
+   }
+}
+
+ 
+?>
 <!doctype html>
 <html lang="en">
   <head>
