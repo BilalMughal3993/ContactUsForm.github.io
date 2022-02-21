@@ -50,7 +50,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST')
   
 
   <body>
-    
+  <div id="root"></div>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Contact Us</a>
